@@ -18,3 +18,6 @@ python-docx>=1.1.2
 python-pptx>=1.0.2
 openpyxl>=3.1.5
 marko>=2.1.2
+chromadb>=0.4.0
+sentence-transformers>=2.2.0
+docling-core>=1.0.0
