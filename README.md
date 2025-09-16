@@ -118,6 +118,10 @@ This will verify that all models are downloaded and the environment is properly 
 - **Memory Usage**: ~2-4GB RAM during processing
 - **Storage**: ~1.2GB for all models
 
+## Model Structure
+
+For detailed information about all model files and folder structure, see [MODEL_STRUCTURE.md](MODEL_STRUCTURE.md).
+
 ## License
 
 This project uses Docling, which is licensed under the Apache License 2.0.
