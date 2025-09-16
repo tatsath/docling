@@ -37,6 +37,44 @@ def setup_offline_environment():
     os.environ["HF_HUB_DISABLE_TELEMETRY"] = "1"
     os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
+def debug_document_structure(doc):
+    """Debug function to show document structure"""
+    debug_info = []
+    
+    # Check document attributes
+    debug_info.append(f"Document type: {type(doc)}")
+    debug_info.append(f"Document attributes: {dir(doc)}")
+    
+    # Check pictures
+    if hasattr(doc, 'pictures'):
+        debug_info.append(f"Pictures attribute exists: {doc.pictures}")
+        if doc.pictures:
+            debug_info.append(f"Number of pictures: {len(doc.pictures)}")
+            for i, pic in enumerate(doc.pictures):
+                debug_info.append(f"Picture {i}: {type(pic)} - {dir(pic)}")
+                if hasattr(pic, 'get_image'):
+                    try:
+                        img = pic.get_image(doc)
+                        debug_info.append(f"  get_image() result: {type(img)} - {img is not None}")
+                    except Exception as e:
+                        debug_info.append(f"  get_image() error: {e}")
+    
+    # Check markdown content
+    if hasattr(doc, 'export_to_markdown'):
+        try:
+            markdown = doc.export_to_markdown()
+            debug_info.append(f"Markdown length: {len(markdown)}")
+            # Look for image patterns
+            import re
+            img_patterns = re.findall(r'!\[.*?\]\(.*?\)', markdown)
+            debug_info.append(f"Markdown image patterns found: {len(img_patterns)}")
+            if img_patterns:
+                debug_info.append(f"First few patterns: {img_patterns[:3]}")
+        except Exception as e:
+            debug_info.append(f"Markdown export error: {e}")
+    
+    return debug_info
+
 def extract_images_from_doc(doc):
     """Extract images from DoclingDocument with multiple fallback methods"""
     images = []
@@ -63,8 +101,22 @@ def extract_images_from_doc(doc):
                         'image': picture.image,
                         'source': 'pictures.image'
                     })
+                else:
+                    # Even if no image data, add as reference
+                    images.append({
+                        'type': 'picture_ref',
+                        'index': i,
+                        'source': 'pictures.placeholder',
+                        'info': f"Picture {i+1} detected but no image data available"
+                    })
             except Exception as e:
                 st.warning(f"Could not extract picture {i+1}: {e}")
+                images.append({
+                    'type': 'picture_error',
+                    'index': i,
+                    'source': 'pictures.error',
+                    'error': str(e)
+                })
     
     # Method 2: Check for images in markdown content
     if hasattr(doc, 'export_to_markdown'):
@@ -77,6 +129,26 @@ def extract_images_from_doc(doc):
                 'index': i,
                 'reference': img_ref,
                 'source': 'markdown_content'
+            })
+    
+    # Method 3: Check for base64 encoded images in markdown
+        base64_images = re.findall(r'!\[.*?\]\(data:image/[^;]+;base64,[^)]+\)', markdown)
+        for i, img_ref in enumerate(base64_images):
+            images.append({
+                'type': 'base64',
+                'index': i,
+                'reference': img_ref,
+                'source': 'markdown_base64'
+            })
+    
+    # Method 4: Check for HTML img tags
+        html_images = re.findall(r'<img[^>]+src="([^"]+)"[^>]*>', markdown)
+        for i, img_src in enumerate(html_images):
+            images.append({
+                'type': 'html',
+                'index': i,
+                'reference': img_src,
+                'source': 'html_img_tag'
             })
     
     return images
@@ -518,6 +590,12 @@ def pdf_processing_tab():
                         doc = stats['docling_document']
                         images = extract_images_from_doc(doc)
                         
+                        # Debug section
+                        with st.expander("🔍 Debug Info", expanded=False):
+                            debug_info = debug_document_structure(doc)
+                            for info in debug_info:
+                                st.text(info)
+                        
                         if images:
                             for i, img_data in enumerate(images):
                                 st.markdown(f"**Image {i+1}** (Source: {img_data['source']})")
@@ -528,15 +606,51 @@ def pdf_processing_tab():
                                         st.image(img_data['image'], caption=f"Image {i+1}")
                                     except Exception as e:
                                         st.error(f"Could not display image {i+1}: {e}")
+                                        
                                 elif img_data['type'] == 'markdown':
                                     # Display markdown reference
-                                    st.markdown(img_data['reference'])
+                                    st.markdown(f"Markdown: {img_data['reference']}")
+                                    
+                                elif img_data['type'] == 'base64':
+                                    # Try to display base64 image
+                                    try:
+                                        import base64
+                                        from io import BytesIO
+                                        from PIL import Image
+                                        
+                                        # Extract base64 data
+                                        base64_data = img_data['reference'].split('base64,')[1].split(')')[0]
+                                        image_data = base64.b64decode(base64_data)
+                                        image = Image.open(BytesIO(image_data))
+                                        st.image(image, caption=f"Image {i+1} (Base64)")
+                                    except Exception as e:
+                                        st.markdown(f"Base64: {img_data['reference'][:100]}...")
+                                        st.warning(f"Could not decode base64 image: {e}")
+                                        
+                                elif img_data['type'] == 'html':
+                                    # Display HTML img tag
+                                    st.markdown(f"HTML: {img_data['reference']}")
+                                    
+                                elif img_data['type'] == 'picture_ref':
+                                    # Show placeholder info
+                                    st.info(f"🖼️ {img_data['info']}")
+                                    
+                                elif img_data['type'] == 'picture_error':
+                                    # Show error info
+                                    st.error(f"❌ Error extracting image: {img_data['error']}")
+                                    
+                                else:
+                                    # Unknown type
+                                    st.warning(f"Unknown image type: {img_data['type']}")
+                                    
+                                st.divider()
                         else:
                             # Fallback to markdown extraction
                             markdown_lines = stats['markdown'].split('\n')
                             image_lines = [line for line in markdown_lines if '![' in line or '<img' in line]
                             
                             if image_lines:
+                                st.info("Found image references in markdown:")
                                 st.code('\n'.join(image_lines), language='markdown')
                             else:
                                 st.info("Images found but no extractable image data detected")
