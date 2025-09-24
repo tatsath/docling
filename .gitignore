@@ -1,0 +1,45 @@
+# Model files (too large for git)
+downloaded_models/
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.onnx
+*.h5
+
+# Output files
+output/
+*.txt
+*.md
+!README.md
+!MODEL_STRUCTURE.md
+!DOCLING_*.md
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# Environment
+.env
+.venv
+env/
+venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+docling_repo/
