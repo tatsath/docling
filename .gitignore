@@ -15,6 +15,7 @@ output/
 !MODEL_STRUCTURE.md
 !DOCLING_*.md
 !Document/*.md
+!Document/**/*.md
 
 # Python cache
 __pycache__/
