@@ -59,13 +59,12 @@ The VC said "something like this is not practical." Most of that objection is ai
 
 Four things, in priority order. None of them kill the company. All of them, left unfixed, justify the "not practical" verdict.
 
-**1.** ⛔ **The deck claims things about closed models that are physically impossible.** "Discover model internals" plus an integration list that includes Claude and OpenAI agents implies you read the internals of closed, API-only models. You cannot. The majority of enterprise agents today run on closed APIs. For those, NeuronLens is a *behavioral* product, full stop. The mechanistic story is real, but only for open/self-hosted models. **Fix:** adopt the two-tier framing everywhere and rewrite the deck to match it (details in Part 2). This single change is the difference between "interesting but not practical" and "credible."
-
-**2.** ⛔ **"Generate Alpha" is the least defensible claim in the entire pitch.** Headline-sentiment-to-trading-signal is the single most commoditized idea in quantitative finance; "Coverage 1.0%" is a red flag, not a feature; and there is no backtested, cost-adjusted, out-of-sample evidence anywhere. Your own quant credibility works *against* you here, because a sophisticated buyer knows you know better. **Fix:** kill the alpha framing entirely. Repackage as a **Finance AI Assurance / Explainability Pack** (Part 9).
-
-**3.** 🟡 **SAE features are not yet a production gating signal.** They are unstable across retrains and model versions, frequently polysemantic, and their labels (e.g., via Neuronpedia) are auto-generated and often wrong or vague. A number like "91% intent signal" means nothing without a false-positive rate on a named benchmark — and in a system that *blocks* actions, false positives are the expensive failure. **Fix:** lead with **linear probes** (cheaper, far more stable, and the published evidence puts them at ~90–96% accuracy for behaviors like sandbagging detection); treat SAE features as *supporting evidence*, never the sole gate; publish a precision/recall/FP-rate card.
-
-**4.** 🟡 **Don't lead with autonomous blocking.** Inserting a third-party gate into the critical path of agent execution is a slow, high-liability enterprise sell (latency, false blocks, "who owns it when you wrongly block a $10M trade?"). **Fix:** enter as **evidence + observability + Review/shadow-mode**; earn Block later, opt-in, per workflow.
+| # | Signal | Issue | Fix |
+|:-:|:------:|-------|-----|
+| 1 | ⛔ | **The deck claims things about closed models that are physically impossible.** "Discover model internals" plus an integration list that includes Claude and OpenAI agents implies you read the internals of closed, API-only models. You cannot. The majority of enterprise agents today run on closed APIs. For those, NeuronLens is a *behavioral* product, full stop. The mechanistic story is real, but only for open/self-hosted models. | Adopt the two-tier framing everywhere and rewrite the deck to match it (details in Part 2). This single change is the difference between "interesting but not practical" and "credible." |
+| 2 | ⛔ | **"Generate Alpha" is the least defensible claim in the entire pitch.** Headline-sentiment-to-trading-signal is the single most commoditized idea in quantitative finance; "Coverage 1.0%" is a red flag, not a feature; and there is no backtested, cost-adjusted, out-of-sample evidence anywhere. Your own quant credibility works *against* you here, because a sophisticated buyer knows you know better. | Kill the alpha framing entirely. Repackage as a **Finance AI Assurance / Explainability Pack** (Part 9). |
+| 3 | 🟡 | **SAE features are not yet a production gating signal.** They are unstable across retrains and model versions, frequently polysemantic, and their labels (e.g., via Neuronpedia) are auto-generated and often wrong or vague. A number like "91% intent signal" means nothing without a false-positive rate on a named benchmark — and in a system that *blocks* actions, false positives are the expensive failure. | Lead with **linear probes** (cheaper, far more stable, ~90–96% accuracy for behaviors like sandbagging detection); treat SAE features as *supporting evidence*, never the sole gate; publish a precision/recall/FP-rate card. |
+| 4 | 🟡 | **Don't lead with autonomous blocking.** Inserting a third-party gate into the critical path of agent execution is a slow, high-liability enterprise sell (latency, false blocks, "who owns it when you wrongly block a $10M trade?"). | Enter as **evidence + observability + Review/shadow-mode**; earn Block later, opt-in, per workflow. |
 
 Everything else in the strategy is defensible if you frame it honestly. The rest of this document is how.
 
@@ -73,12 +72,14 @@ Everything else in the strategy is defensible if you frame it honestly. The rest
 
 ### What is genuinely strong (defend these without flinching)
 
-- ✅ **The Deployment Card.** The most defensible, most procurable thing you have. It rides directly on the regulatory wave (EU AI Act, SR 11-7-style model-risk governance at banks) and needs *zero* mechanistic access to deliver value.
-- ✅ **The two-tier honest positioning.** It is the answer to the "not practical" objection, not a weakness.
-- ✅ **Safety Lens as a prompt-injection / RAG-poisoning / output-policy firewall.** Crowded market, but a real and growing need; the mechanistic tier is a genuine differentiator *for open models*.
-- ✅ **The detect → evidence → repair → prove loop.** Selling the *loop* (not a single detector) is what makes this a platform rather than a feature.
-- ✅ **The finance assurance angle (not alpha).** Defensible precisely because of the founder.
-- ✅ **Founder credibility.** Quant + interpretability + enterprise GenAI + an O'Reilly book + a published finance-MI paper is a real, rare combination for this buyer.
+| ✅ Item | Why |
+|--------|-----|
+| **The Deployment Card** | Most defensible, most procurable thing you have. Rides directly on the regulatory wave (EU AI Act, SR 11-7-style model-risk governance) and needs *zero* mechanistic access to deliver value |
+| **The two-tier honest positioning** | It is the answer to the "not practical" objection, not a weakness |
+| **Safety Lens as a prompt-injection / RAG-poisoning / output-policy firewall** | Crowded market, but a real and growing need; the mechanistic tier is a genuine differentiator *for open models* |
+| **The detect → evidence → repair → prove loop** | Selling the *loop* (not a single detector) is what makes this a platform rather than a feature |
+| **The finance assurance angle (not alpha)** | Defensible precisely because of the founder |
+| **Founder credibility** | Quant + interpretability + enterprise GenAI + an O'Reilly book + a published finance-MI paper is a real, rare combination for this buyer |
 
 ---
 
@@ -419,14 +420,14 @@ The new field guide (Mitra, 2026) is the most honest practitioner account of whe
 
 This is the most important repackaging in the document.
 
-**What's wrong with "Generate Alpha using AI Model Internals" (deck p.9):**
+#### What's wrong with "Generate Alpha using AI Model Internals" (deck p.9)
 
 - Headline-sentiment-to-signal is the most commoditized idea in quant finance (RavenPack, Bloomberg, every sell-side desk). An LLM-internals version is not obviously better and is certainly not novel alpha.
 - "Coverage 1.0%" means the signal fires on ~1% of inputs. That is not a feature; it's an admission the signal is rare and probably overfit.
 - There is **no** backtest, no out-of-sample period, no transaction-cost adjustment, no Sharpe, no capacity analysis. A quant buyer will ask for all of these in the first five minutes.
 - Your credibility makes this *worse*: you are a known quant + interpretability author, so claiming naïve alpha invites the harshest scrutiny.
 
-**What to sell instead — Finance AI Assurance Pack:**
+#### What to sell instead — Finance AI Assurance Pack
 
 - Explainable, attributable risk/grounding signals for finance AI workflows (research assistants, document agents, client-facing chat)
 - Advice-language / suitability / compliance detection (Output Shield + finance policy mode)
@@ -677,6 +678,8 @@ Pre-empt each objection rather than waiting for it:
 | "Four verticals / one engine" framing | Reads as lack of focus | 🟡 | Lead with 2 P0 + 1 P1; engine is *why you can ship* |
 | MVP-scale numbers (622 concepts, 244K articles, 52 stocks) | Fine as scale, not as performance | 🟡 | Label "demonstrated at MVP scale," separate from benchmarks |
 | Founder (quant + MI + enterprise + book + paper) | Rare, credible | ✅✅ | Foreground; finance-MI paper is the anchor |
+
+---
 
 ---
 

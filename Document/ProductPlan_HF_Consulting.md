@@ -104,6 +104,8 @@ The operating stance: use Unsiloed for document intelligence, use AlgoBulls for 
 
 > **Worth considering.** The strongest *commercial* signal isn't adoption — it's the regulatory pressure on RIAs. It converts "nice to have" into "have to," and it has a named buyer (the CCO) with budget anxiety. Anchor the first offer there.
 
+![Market Signal Snapshot](./Blogs/Pictures/chart-5-market-signals.svg)
+
 ---
 
 ## 4. Positioning
@@ -169,6 +171,8 @@ They **supervise communications**; you **design the workflow before risky commun
 
 > **Worth considering — where the moat actually is.** It is **not technology** (you use Unsiloed, AlgoBulls, Claude, OpenBB). It is finance-vertical workflow expertise + trust + reusable IP + speed. That is a real but **boutique-scale** moat: it defends a high-margin services firm, not a venture-scale platform. The defense is depth in one narrow vertical, delivered faster than a Big-4 and more credibly than a generic AI shop.
 
+![Competitive Positioning Map](./Blogs/Pictures/chart-4-competitive-positioning-map.svg)
+
 ---
 
 ## 6. Wedge Prioritization (Recommended Order)
@@ -183,6 +187,8 @@ The recommended order separates two questions the typical plan conflates — *wh
 | **4** | **DDQ / Investor AI Response Pack** | Add-on, never standalone | Attach to fund / emerging-manager / family-office engagements |
 | **5** | **Hedge Fund Research Workflow** | Selective / inbound | Crowded. Only smaller/emerging funds, framed as "configure and control what you already have" |
 | **6** | **AI Trading Strategy Validation Lab ([AlgoBulls](https://algobulls.com/))** | Content now, paid later | Different ICP, partner-fit unverified, and it sells *discipline* to buyers who want *alpha* |
+
+![Wedge Prioritization Matrix](./Blogs/Pictures/chart-1-wedge-prioritization-matrix.svg)
 
 > **Worth considering — why trading is demoted.** Three independent reasons, any one sufficient: (1) brokers/fintech/quant buyers share almost nothing with your RIA/credit/fund-COO buyer, doubling your go-to-market; (2) AlgoBulls appears to be primarily an India-market / retail-and-broker platform — confirm it serves the US institutional/SEC context before any US-facing offer (Section 20); (3) "we install risk discipline so your backtests don't blow you up" is the opposite of what an alpha-seeker wants to hear — a low-conversion sale.
 
@@ -293,6 +299,10 @@ The demo: original PDF/deck/credit agreement → structured content → source-l
 
 A $5K audit is too low — too little revenue, too much effort. The $15K–$30K diagnostic is the right floor.
 
+![Offer and Price Ladder](./Blogs/Pictures/chart-3-offer-price-ladder.svg)
+
+![Engagement Escalator](./Blogs/Pictures/chart-2-engagement-escalator.svg)
+
 > **Worth considering.** (1) These are *mature-boutique* prices. As an unknown founder, the first 2–3 deals land at the lower bound, or need a discounted "founding client" diagnostic to buy the case study — don't anchor runway on the top of the ranges. (2) Elevate the **retainer**: it's the best model here (recurring, sticky, founder-leveraged) and the natural land-and-expand from any engagement. Make it the *goal* of every engagement, and never let a diagnostic die as a report.
 
 ---
@@ -345,6 +355,8 @@ AI-governance DDQ answers ⭐ · cybersecurity/privacy responses · vendor-risk 
 | **4. Workflow agents** | extractor → analyst → critic → reviewer → validator → compliance checker → writer |
 | **5. Validation** | claim–evidence mapping; numerical checks; source coverage; stale-source detection; contradiction checks; compliance-language flags |
 | **6. Audit** | prompt/output logs; source ledger; reviewer notes; approval status; model/version tracking; exportable compliance pack |
+
+![Architecture Flow](./Blogs/Pictures/chart-7-architecture-flow.svg)
 
 > **Core insight:** in finance, every material claim needs claim-level source support, calculation traceability, and human review.
 
@@ -483,19 +495,21 @@ Realistic targets: **2 paid diagnostics ($15K–$30K each)**; **1 RIA governance
 
 **Day-90 gate:** if there's no serious RIA pipeline, the positioning is still too broad or the segment is wrong — narrow further before spending on delivery capacity.
 
+![90-Day Roadmap](./Blogs/Pictures/chart-6-90-day-roadmap.svg)
+
 ---
 
 ## 19. Suggested Charts and Visuals
 
-| # | Visual | What it shows | Maps to |
-|---|--------|--------------|---------|
-| 1 | **Wedge prioritization matrix (2×2)** | Delivery difficulty (x) vs deal value/ticket (y), plotting the six wedges — shows visually why RIA Governance is the beachhead (low difficulty, mid value) and Private Credit is the flagship (high difficulty, high value) | Section 6 |
-| 2 | **Value escalator / funnel** | Essays → workshops → diagnostic → implementation → fractional retainer → productization — the land-and-expand path | Sections 9 & 16 |
-| 3 | **Offer-and-price ladder (horizontal bars)** | Price ranges per offer, sorted, with the recurring retainer highlighted | Section 9 |
-| 4 | **Competitive positioning map** | Grid placing platforms, data incumbents, advisor tools, compliance tools, and "you" (the implementation/governance layer) so the white space is obvious | Section 5 |
-| 5 | **Market-signal snapshot (bar chart)** | Headline adoption stats (label clearly as "to be verified") | Section 3 |
-| 6 | **90-day roadmap timeline** | Three swimlanes (assets · channel/authority · pipeline/wins) across days 1–15 / 16–45 / 46–90 | Section 18 |
-| 7 | **Architecture flow** | Ingestion → parsing → retrieval → workflow agents → validation → audit, with the human-review/approval gate highlighted as the product | Section 12 |
+| # | Visual | Embedded in |
+|---|--------|-------------|
+| 1 | **Wedge prioritization matrix (2×2)** | [Section 6](#6-wedge-prioritization-recommended-order) |
+| 2 | **Value escalator / funnel** | [Section 9](#9-offer-stack-and-pricing-ladder) |
+| 3 | **Offer-and-price ladder (horizontal bars)** | [Section 9](#9-offer-stack-and-pricing-ladder) |
+| 4 | **Competitive positioning map** | [Section 5](#5-competitive-landscape-and-how-to-position-against-each) |
+| 5 | **Market-signal snapshot (bar chart)** | [Section 3](#3-why-this-works-the-market-reality) |
+| 6 | **90-day roadmap timeline** | [Section 18](#18-90-day-plan) |
+| 7 | **Architecture flow** | [Section 12](#12-technical-architecture--evidence--workflow--controls) |
 
 ---
 
