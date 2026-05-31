@@ -269,6 +269,18 @@ Anthropic used white-box probing and SAE features for concepts such as reward ha
 
 It is a *targeted repair* product, not a broad model-design product.
 
+### Addressable model types
+
+| Model type | Example models | Sectors | Best failure types / use cases | Priority |
+|-----------|---------------|---------|-------------------------------|:--------:|
+| **Encoder classifiers** | FinBERT, DeBERTa, RoBERTa, ModernBERT-style classifiers | Finance, insurance, legal, healthcare admin | Sentiment repair, credit-risk classification, compliance labels, NER/event extraction | **P0** |
+| **Small verifier LLMs** | Qwen, Gemma, Llama, Mistral 3B–14B | Finance, legal, healthcare, enterprise RAG | Claim support, citation validity, policy boundary, source-grounding verifier repair | **P0/P1** |
+| **Router / policy models** | Small classifiers, small LLM routers | Finance, enterprise AI, customer support, cyber | Escalation routing, block/allow/review decisions, tool routing, human-review triggers | **P1** |
+| **Domain summarizers / rewrite models** | Qwen, Llama, Mistral 7B–24B | Finance, legal, insurance, pharma/regulatory | Credit memo summaries, earnings summaries, legal clause summaries, compliant rewrites | **P1/P2** |
+| **Open agent models** | Qwen/Llama/Mistral agent models, GPT-OSS-style open models | Finance agents, SOC agents, coding agents, enterprise automation | Tool-risk repair, tool-need repair, skipped-verification repair, false-completion repair | **P1** |
+| **Large open models** | 32B+ open models | Enterprise AI, regulated domain copilots | Broader behavior repair, instruction-following repair, safety/risk-boundary repair | **P2** |
+| **Closed frontier models** | Claude, GPT, Gemini | All sectors | **No internal repair** — behavioral assurance, trace checks, safety firewall, and deployment card only | **Not for repair** |
+
 ### The repair workflow
 
 ```
