@@ -34,13 +34,11 @@ Without that operating layer, generative AI inside a firm is a collection of imp
 
 > **🔧 PROOF SLOT — replace before publishing.** *Drop in one concrete, anonymized example you have lived through: a firm where three analysts were each using AI in three incompatible ways, or a moment where a polished AI output turned out to be subtly wrong. One real anecdote here does more for your credibility than the next three paragraphs of argument. If you don't have one yet, cut this block — never invent it.*
 
-> **[Figure 1 — "Usage vs. Adoption"]**
->
-> A simple two-column or before/after diagram.
-> - **Left:** scattered, unconnected tool icons labelled "usage" (one analyst, one prompt, no review, no record)
-> - **Right:** a single connected pipeline labelled "adoption" (input rules → workflow → review → evidence → storage → metric)
->
-> *Caption: "Most firms are on the left and believe they are on the right."*
+![Figure 1 — Usage vs. Adoption](Pictures/1-1-usage-vs-adoption.svg)
+
+*"Most firms are on the left and believe they are on the right."*
+
+---
 
 ---
 
@@ -94,13 +92,11 @@ If the last mile is the problem, what does crossing it actually require? Strip a
 
 > **The firms that win will not be the ones with the best model layer. They will be the ones that built the other four.**
 
-> **[Figure 2 — "The five-layer stack"]**
->
-> A vertical stack of five labelled bands: Model · Data · Workflow · Evidence · Control.
->
-> Annotate the Model band with "rented / commodity / everyone has this" and bracket the top four bands with "the durable advantage." Keep it clean and diagrammatic — this is the visual spine of the whole blog and you will reuse it.
->
-> *Caption: "Most firms have built the bottom band and called it an AI strategy."*
+![Figure 2 — The Five-Layer Stack](Pictures/R2-five-layer-stack.svg)
+
+*"Most firms have built the bottom band and called it an AI strategy."*
+
+---
 
 ---
 
@@ -116,15 +112,9 @@ Read that the right way. The bottleneck is not the model's reasoning. It is the 
 
 The fix is to stop treating an AI output as an answer and start treating it as a chain that can be inspected. For every material claim: what is the claim, what source supports it, which page or section, what calculation produced any number in it, and who signed off. That chain — claim to source to calculation to reviewer — is the difference between an AI-assisted memo you can defend and a plausible document you merely hope is right.
 
-> **[Figure 3 — "The evidence chain"]**
->
-> A left-to-right flow:
->
-> **Claim** → **Source (doc + page)** → **Calculation** → **Reviewer decision**, with a small "rejected / sent back" loop from Reviewer back to Source.
->
-> Contrast it visually with a greyed-out box labelled "what most RAG demos actually show: Question → Answer → 🤞"
->
-> *Caption: "In finance, the question is never 'did the model find a source?' It is 'does the source prove the claim?'"*
+![Figure 3 — The Evidence Chain](Pictures/R1-evidence-chain.svg)
+
+*"In finance, the question is never 'did the model find a source?' It is 'does the source prove the claim?'"*
 
 *(This deserves its own essay, and it will get one. For now the point stands: an evidence layer is not a nice-to-have. It is the thing that makes everything above it usable.)*
 

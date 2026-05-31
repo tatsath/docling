@@ -28,14 +28,11 @@ Most of the confusion in this space comes from collapsing three distinct things 
 
 **Autonomous strategy discovery and trading.** This is the frontier — and the hype, and the risk. Genetic and evolutionary systems that search for trading strategies on their own; multi-agent "trading firm" architectures; the Robinhood-style consumer agents that act on a real account. The capability is real and improving fast. So is the failure mode, which I will spend a section on, because it is the thing nobody puts on the slide.
 
-> **[Figure 1 — "The agentic-trading spectrum"]**
->
-> Three bands, left to right.
-> 1. **EXECUTION ALGOS** — "mature, ~60–75% of US equity volume, not the story."
-> 2. **RESEARCH & DATA AGENTS** — "highest near-term value, lowest risk; doesn't trade" — examples: LinqAlpha, Claude for Financial Services, Perplexity Finance, Bloomberg/FactSet AI, Citi internal.
-> 3. **AUTONOMOUS DISCOVERY & TRADING** — "frontier + hype + risk" — examples: genetic/evolutionary strategy search, TradingAgents-style multi-agent, Robinhood agents.
->
-> *Caption: "Vendors blur these together. You shouldn't."*
+![Figure 1 — The Agentic-Trading Spectrum](Pictures/3-1-trading-spectrum.svg)
+
+*"Vendors blur these together. You shouldn't."*
+
+---
 
 ---
 
@@ -55,14 +52,11 @@ Here is the workflow, stage by stage, with where AI genuinely helps and where it
 | **6. Execution** — placing the order | Largely solved, regulated, commoditized | Autonomy here carries irreversible, real-money consequences |
 | **7. Monitoring and risk** — watching positions, flagging drift | Strong and underrated — continuous monitoring is one of AI's best uses[^bal] | — |
 
-> **[Figure 2 — "Where AI belongs in the trading workflow"]**
->
-> The seven stages above as a left-to-right pipeline, colour-coded by an AI value-vs-risk judgment:
-> - **GREEN** (high value, low risk): Ideation, Data, Research, Monitoring
-> - **AMBER** (real value, real overfitting risk): Signal, Backtest
-> - **RED** (highest risk, irreversible, regulated): Execution
->
-> *Caption: "The value is concentrated where mistakes are reversible. The hype is concentrated where they aren't."*
+![Figure 2 — Where AI Belongs in the Trading Workflow](Pictures/3-2-trading-workflow.svg)
+
+*"The value is concentrated where mistakes are reversible. The hype is concentrated where they aren't."*
+
+---
 
 The pattern is hard to miss once you draw it. AI's value is concentrated in the stages where a mistake is *reversible* — a bad screen, a flawed draft, a noisy alert, all caught by a human before money moves. The hype is concentrated in the one stage where a mistake is *irreversible*. That is not an argument against agentic trading. It is an argument for sequencing it correctly.
 
@@ -106,14 +100,9 @@ When you search over many candidate strategies on the same finite history, you a
 
 Now connect that to agentic strategy discovery, and the danger becomes obvious. A genetic algorithm or a tireless agent does not test ten strategies. It tests thousands, or hundreds of thousands, overnight. Every additional trial makes it *more* certain that the best-looking result is a statistical mirage — not less. An AI that can generate and backtest strategies at superhuman speed is, absent discipline, a superhuman overfitting machine. The deflated Sharpe ratio exists precisely because the number of trials is the thing that kills you, and an agent's defining feature is running an astronomical number of trials.
 
-> **[Figure 3 — "The overfitting mirage"]**
->
-> Two equity curves on one chart: a soaring in-sample / backtest line, and a flat-to-declining out-of-sample / live line that diverges hard at the "go-live" marker.
->
-> Annotate: *"10,000 strategies tested → the best backtest is almost certainly luck → it dies live."*
-> Callout: *"A Sharpe of 2.3 across 10,000 trials may be worth a Sharpe of ~0 once you deflate for the search."*
->
-> *Caption: "The more strategies an agent tries, the more certain the winner is a mirage — unless you correct for the number of trials (Bailey & López de Prado)."*
+![Figure 3 — The Overfitting Mirage](Pictures/3-3-overfitting-mirage.svg)
+
+*"The more strategies an agent tries, the more certain the winner is a mirage — unless you correct for the number of trials (Bailey & López de Prado)."*
 
 The lesson is not "don't use AI to generate strategies." It is: treat every auto-discovered strategy as a *hypothesis to be disproved*, demand genuine out-of-sample and forward (paper-traded) validation, insist on an *economic rationale* for why the edge should exist, and correct your performance statistics for the number of things you tried. Anything an agent hands you with a beautiful backtest and no economic story is guilty until proven innocent.
 

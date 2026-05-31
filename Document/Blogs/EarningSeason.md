@@ -26,16 +26,9 @@ Reframe the whole exercise around a single question the analyst should be able t
 
 Everything an AI system should do during earnings season is in service of answering that faster and more rigorously than a human could alone. That immediately splits the work into two halves that matter far more than the call itself: the *pre-read* (everything you assemble before the number drops) and the *post-read* (the structured reconciliation and judgment after it does). The call sits in the middle, and the summary of it is the least interesting artifact in the entire process.
 
-> **[Figure 1 — "Two reads of one print"]**
->
-> A horizontal timeline in three beats.
-> - **Left — PRE-READ (T-minus):** "assemble the prep pack against last quarter's watch-list"
-> - **Center — THE PRINT / CALL:** small, deliberately unglamorous
-> - **Right — POST-READ (T-plus):** "reconcile, extract deltas, update the thesis"
->
-> Annotate that AI's real leverage sits on the two ends, not the summary in the middle.
->
-> *Caption: "The summary is the part everyone automates and the part that matters least."*
+![Figure 1 — Two Reads of One Print](Pictures/2-1-two-reads.svg)
+
+*"The summary is the part everyone automates and the part that matters least."*
 
 ---
 
@@ -87,11 +80,9 @@ There is even evidence that linguistic features of management narratives carry i
 
 Two cautions, stated plainly so the essay stays honest. First, this is exactly the kind of analysis AI is well suited to surface across dozens of calls a human could never read closely in the window — flagging the hedging, the non-answers, the language drift for an analyst to examine. Second, these are signals to *investigate*, never verdicts to *act on*. Over-fitting a thesis to a CFO's word choice is its own failure mode. The model's job is to raise its hand and point at the suspicious passage. The analyst's job is to decide whether it means anything.
 
-> **[Figure 2 — "What 'tone' actually decomposes into"]**
->
-> Center node: "Management tone." Show a generic positive/negative gauge as a thin, greyed-out sliver labelled "what naive sentiment measures." Branch out the signals that matter: Uncertainty / hedging · Q&A evasion (non-answers) · Guidance discipline · Language drift vs. prior quarters · Tone-vs-numbers gap.
->
-> *Caption: "Generic sentiment misclassifies financial language (Loughran-McDonald, 2011). The signal is in the texture, and most of it is in the Q&A."*
+![Figure 2 — What Tone Decomposes Into](Pictures/2-2-tone-decomposed.svg)
+
+*"Generic sentiment misclassifies financial language (Loughran-McDonald, 2011). The signal is in the texture, and most of it is in the Q&A."*
 
 ---
 
@@ -121,13 +112,9 @@ This is where continuous monitoring earns its keep, and it is no longer theoreti
 
 Whatever this workflow produces — the reconciliation, the tone flags, the red-team case — should land in a memo built as an inspectable chain rather than a block of confident prose. For every material claim: what is the claim, which transcript line or filing page supports it, what calculation produced any number in it, and who signed off. This is the same evidence discipline that runs through everything in this series, applied to the earnings memo specifically.
 
-> **[Figure 3 — "The earnings memo as an evidence chain"]**
->
-> Left-to-right flow, deliberately echoing the evidence-chain figure from Essay 01:
->
-> **Claim** → **Transcript line / filing page** → **KPI reconciliation (the math)** → **PM sign-off**, with a small "sent back" loop from sign-off to source.
->
-> *Caption: "Same evidence chain as the operating-model essay — pointed at a single earnings print."*
+![Figure 3 — The Evidence Chain](Pictures/R1-evidence-chain.svg)
+
+*"Same evidence chain as the operating-model essay — pointed at a single earnings print."*
 
 There is a compounding benefit most desks miss. A memo built this way is not just defensible today; it is *searchable institutional memory*. Two years from now, when the same name reports and a new analyst asks "what did we actually think last time, and why," a corpus of evidence-linked memos answers in seconds what otherwise lives only in someone's head or a buried email. The evidence trail is the byproduct that quietly becomes one of the firm's most valuable assets — a thread I will pull on properly in a later essay on turning a research archive into investment memory.
 

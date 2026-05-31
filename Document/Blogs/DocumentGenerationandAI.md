@@ -24,15 +24,11 @@ Strip the logos off and almost every one of these platforms is the same pipeline
 
 **Inputs** — regulatory filings and PDFs, the open web, and internal sources (data rooms, SharePoint, CRM, research archives, models) — flow into **ingestion and extraction** (parsing documents, pulling out the numbers and facts), then **retrieval and grounding** (finding the right evidence for a given question), then an **agentic drafting** step (assembling the deliverable), then — if the firm is serious — a **verification and review** gate, producing the **output**: an equity report, a pitchbook, a credit memo, a diligence report, a tax document.
 
-> **[Figure 1 — "The document factory pipeline"]**
->
-> A left-to-right flow:
->
-> **INPUTS** (filings/PDFs · web · internal data: data rooms, SharePoint, CRM, archives) → **EXTRACTION** (parse + pull numbers) → **RETRIEVAL & GROUNDING** (find the right evidence) → **AGENTIC DRAFTING** (assemble the deliverable) → **VERIFICATION & REVIEW** (check every number) → **OUTPUT** (equity report · pitchbook · credit memo · diligence pack)
->
-> Shade the two end stages (inputs, output) as "where attention goes" and the two middle stages (extraction, verification) as "where trust is won or lost."
->
-> *Caption: "Everyone obsesses over the inputs and the output. The middle decides whether you can trust it."*
+![Figure 1 — The Document Factory Pipeline](Pictures/4-1-document-pipeline.svg)
+
+*"Everyone obsesses over the inputs and the output. The middle decides whether you can trust it."*
+
+---
 
 The deception is structural. The inputs are obvious and the output is what everyone sees, so that is where attention and marketing concentrate. But the trustworthiness of the whole thing is decided in the two stages in the middle — extraction and verification — which are invisible in a demo and unglamorous to build. Hold that thought; it is the spine of everything below.
 
@@ -101,15 +97,11 @@ Start with the most important benchmark in this space. Researchers at Stanford a
 | **Numerical reasoning** | Even with perfect inputs, models make arithmetic and unit mistakes — totals that don't foot, margin computed off the wrong base, currency not converted |
 | **Fabrication on absence** | When the answer isn't in the provided documents, the dangerous default is to invent a plausible one rather than say "not found" |
 
-> **[Figure 2 — "Where accuracy is won or lost"]**
->
-> Two columns on the extraction/retrieval layer.
->
-> **Failure points:** mangled tables · missed footnotes & defined terms · wrong source / wrong period · OCR noise on scanned PDFs · arithmetic & unit errors · fabrication on absence
->
-> **Controls:** structure-aware parsing · pull footnotes + definitions with the figure · designated source-of-record + period + restatement handling · OCR with confidence flags · numerical reconciliation (footing/cross-footing) · abstention ("not in the documents")
->
-> *Caption: "This layer is invisible in a demo and decisive in production."*
+![Figure 2 — Where Accuracy Is Won or Lost](Pictures/4-2-accuracy-won-lost.svg)
+
+*"This layer is invisible in a demo and decisive in production."*
+
+---
 
 ### What "good" looks like
 
@@ -123,11 +115,11 @@ The architecture that actually wins is the set of controls opposite those failur
 6. **Explicit abstention** — the system says "this figure is not in the provided documents" rather than inventing one.
 7. **Evals on your own documents** — a labeled regression set (FinanceBench-style) that measures extraction accuracy, citation validity, and numerical correctness, so you are buying on measured performance over *your* filings, not on a demo.
 
-> **[Figure 3 — "The number as an evidence chain"]**
->
-> Flow: Claim/figure → Source (document, page, table, cell, footnote) → Calculation (recompute/reconcile) → Reviewer sign-off, with a "wrong source / failed reconciliation → reject" loop.
->
-> *Caption: "Every number on the slide should be a link you can click and a calculation you can check."*
+![Figure 3 — The Evidence Chain](Pictures/R1-evidence-chain.svg)
+
+*"Every number on the slide should be a link you can click and a calculation you can check."*
+
+---
 
 ---
 
@@ -168,18 +160,9 @@ The decision reduces to four questions:
 
 Underneath all four sits the only metric that ultimately matters — not "what does the tool cost" but **what does it cost to produce one *approved*, defensible output**: the cost-per-approved-output measure from Essay 01.[^builds]
 
-> **[Figure 4 — "Build / Buy / Configure"]**
->
-> A 2×2 matrix. X-axis: "Source of competitive edge? (table stakes → core edge)." Y-axis: "Proprietary / sensitive data? (public → confidential)."
->
-> - Low/low = **BUY** (commodity research, market data)
-> - High-edge/low-data = **CONFIGURE** (engine + your workflow & format)
-> - Low-edge/high-data = **BUY SECURE / PRIVATE DEPLOYMENT** (sensitive but not differentiating)
-> - High/high = **BUILD or OWN** (proprietary archive, house credit logic, live-deal data)
->
-> Overlay: *"verification + evidence + review layer = always yours"*
->
-> *Caption: "Most firms belong in 'configure,' not 'build from scratch' or 'buy and pray.'"*
+![Figure 4 — Build / Buy / Configure](Pictures/4-4-build-buy-configure.svg)
+
+*"Most firms belong in 'configure,' not 'build from scratch' or 'buy and pray.'"*
 
 ---
 
