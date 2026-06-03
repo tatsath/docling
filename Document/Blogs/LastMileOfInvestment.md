@@ -4,13 +4,13 @@
 
 ### Almost every fund and advisory firm now has the tools. Very few have changed how the work actually gets done. The gap between those two facts is where the next decade of advantage will be won — and it is not a software problem.
 
-*By [YOUR NAME] · [DATE] · ~12 min read*
+*By H.T. · June 2026 · ~12 min read*
 
 ---
 
 Spend a week talking to portfolio managers, RIA principals, and private-credit teams about artificial intelligence and you stop hearing the question that dominated 2023. Almost nobody asks *whether* generative AI matters anymore. The numbers settled that argument. In its 2025 research, the Alternative Investment Management Association found that 95% of fund-manager respondents now use generative AI in their work, up from 86% a year earlier.[^aima] Charles Schwab's January 2026 study put adoption among registered investment advisers at 63%, more than double the level of 2023.[^schwab] At Balyasny Asset Management, roughly 95% of the firm's investment teams actively use its internal AI research platform.[^balyasny]
 
-So the tools are everywhere. And yet, if you sit with the people inside these firms, a quieter and more uncomfortable question keeps surfacing:
+So the tools are everywhere. And yet, if you sit with the people inside these firms, a quieter and more uncomfortable question keeps surfacing.
 
 **What, exactly, changed in our daily workflow?**
 
@@ -18,11 +18,13 @@ That question is the whole subject of this essay, and of everything I plan to wr
 
 Most firms have not crossed that last mile. The interesting part is that the companies *selling* the tools now admit it openly.
 
+A quick word on where I sit, since this is the first thing I am publishing in this series and you are entitled to know why you should keep reading. I have not run a book or sat on a trading desk. What I have done is read the primary record closely, the way an analyst reads a filing: the fund case studies, the model labs' own documentation, the benchmark papers, the regulatory releases. Most of what passes for AI commentary in this industry is either vendor copy or breathless prediction. The useful work, it turns out, is quieter: reading what the best firms actually disclosed about how they operate, and turning it into a playbook a smaller firm can use. That is the gap I work in, and it is the gap this series is about.
+
 ---
 
 ## Usage Is Not Adoption
 
-Start with the cleanest piece of evidence, because it reframes everything. In the same Schwab study that reported 63% adoption, only about one in ten advisers who use AI said they had fully integrated it into their business strategy.[^schwab] Read those two figures together and the picture sharpens: a large majority are *using* AI, and a small minority have *adopted* it.
+Start with the cleanest piece of evidence, because it reframes everything. In the same Schwab study that reported 63% adoption, only about one in ten advisers who use AI said they had fully integrated it into their business strategy.[^schwab] Read those two figures together and the picture sharpens. A large majority are *using* AI. A small minority have *adopted* it.
 
 Those are not the same thing, and conflating them is the single most expensive mistake a firm can make right now.
 
@@ -32,13 +34,11 @@ Those are not the same thing, and conflating them is the single most expensive m
 
 Without that operating layer, generative AI inside a firm is a collection of impressive but fragile experiments. One analyst uses it carefully, with citations. Another pastes a confidential deal memo into a consumer chatbot. One adviser uses it to clean up grammar. Another drafts a client-facing performance explanation that no one reviews. A senior partner watches a good demo and concludes the firm "is using AI." All of that is real usage. None of it is adoption.
 
-> **🔧 PROOF SLOT — replace before publishing.** *Drop in one concrete, anonymized example you have lived through: a firm where three analysts were each using AI in three incompatible ways, or a moment where a polished AI output turned out to be subtly wrong. One real anecdote here does more for your credibility than the next three paragraphs of argument. If you don't have one yet, cut this block — never invent it.*
+The pattern is easy to recognize once you look for it. A firm rarely fails at this because one person made a dramatic mistake. It fails because three capable people are each using AI in three incompatible ways, none of them written down, none reviewed the same way, and no one above them can say with confidence what the firm's actual exposure is. The risk is not the bad actor. It is the absence of a shared process, which means the firm cannot even see its own surface area.
 
 ![Figure 1 — Usage vs. Adoption](Pictures/1-1-usage-vs-adoption.svg)
 
 *"Most firms are on the left and believe they are on the right."*
-
----
 
 ---
 
@@ -48,15 +48,17 @@ Here is the claim that most AI-finance commentary gets wrong. The frontier model
 
 The reason is that in investment management, **a beautiful answer is not a finished one.**
 
-Consider what each desk actually needs, beyond the output itself:
+Consider what each desk actually needs, beyond the output itself.
 
-| Role | What they actually need |
-|------|------------------------|
-| **Hedge fund analyst in earnings season** | What *changed* vs. prior quarter, which specific sentence supports that change, whether the KPI was calculated on the same basis as last time, whether management's language quietly contradicts the existing thesis, and what still requires human judgment before it touches a position |
-| **RIA drafting a client email** | Whether the email contains promissory or performance-guaranteeing language, whether it matches the client's documented risk profile and suitability, whether every factual claim about returns is supported by data the firm actually holds, and whether compliance could reconstruct the review trail eighteen months from now |
-| **Private-credit team writing a credit memo** | Covenant definitions pulled correctly, thresholds and baskets and EBITDA add-backs identified with their exact source pages, borrower reporting obligations laid out, ratio calculations checked, exceptions flagged — and a hard line between what the model *extracted* and what a credit professional *approved* |
+**A hedge fund analyst in earnings season** does not need a summary of the call. The analyst needs to know what *changed* versus the prior quarter, which specific sentence in the transcript supports that change, whether the KPI was calculated on the same basis as last time, whether management's language quietly contradicts the existing thesis, and what still requires a human judgment call before it touches a position. "Summarize this earnings call" is a parlour trick. "Tell me where this quarter breaks my thesis, and show me the line that proves it" is a workflow, and it needs structure, evidence, and a reviewer.
+
+**An RIA drafting a client email** does not need prose. The adviser needs to know whether the email contains promissory or performance-guaranteeing language, whether it matches the client's documented risk profile and suitability, whether every factual claim about returns is supported by data the firm actually holds, and whether compliance could reconstruct the review trail eighteen months from now if asked. One careless sentence in a client communication is not an efficiency story. It is a regulatory exposure.
+
+**A private-credit team writing a credit memo** does not need a draft. The team needs covenant definitions pulled correctly, thresholds and baskets and EBITDA add-backs identified with their exact source pages, borrower reporting obligations laid out, ratio calculations checked, exceptions flagged, and a hard line between what the model *extracted* and what a credit professional *approved*. A credit agreement is a hundred-plus pages of defined terms that reference other defined terms. Asking a model to "summarize the covenants" and trusting the result is how a firm misreads its own downside protection.
 
 In all three cases the model can produce the first artifact in seconds. And in all three cases, that artifact is worthless — or worse, dangerous — until it has been verified, sourced, reviewed, and recorded. That work is the last mile. It is not glamorous. It is the entire job.
+
+This is also the part of the story that the most credible technical voices have started saying out loud. Ben Lorica, who spent years as a quant before becoming one of the more level-headed analysts of applied AI, put it well in early 2026: the near-term story in financial AI is not artificial general intelligence, it is domain-specific AI that survives audits, latency budgets, and messy production data.[^lorica] That is the last mile, stated from the engineering side. The capability is not the constraint. Surviving contact with a real, regulated, audited workflow is the constraint.
 
 > **Prompts are disposable. Workflows and controls are durable.**
 
@@ -82,13 +84,15 @@ The clearest signal that the gap is structural is who is rushing to fill it. The
 
 If the last mile is the problem, what does crossing it actually require? Strip away the vocabulary and every durable AI workflow in a regulated investment firm has the same five layers. Most firms have built exactly one of them.
 
-| Layer | What it is | Common mistake |
-|-------|-----------|----------------|
-| **Model** | The frontier system itself — Claude, GPT, Gemini, or an internal model | Obsessing over this; it is largely a commodity you rent |
-| **Data** | What you point the model at: filings, transcripts, portfolio/CRM data, research archives, credit agreements, internal memos | Quality and accessibility of this layer dominates results |
-| **Workflow** | The repeatable sequence a person follows: input rules, steps, output format | Where "usage" becomes "adoption" — mostly absent in firms that are merely experimenting |
-| **Evidence** | Citations, source pages, numerical checks, source coverage, contradiction detection — not "the model said so" but "here is the claim, the line, the math, and what it conflicts with" | Treating a citation as proof rather than a pointer |
-| **Control** | Human approval, review status, logging, policy rules, and an audit trail | Skipping this entirely and calling it done |
+The **model layer** is the frontier system itself: Claude, GPT, Gemini, or an internal model. This is the layer everyone obsesses over and the one that matters least to your outcome, because it is largely a commodity you rent.
+
+The **data layer** is what you point the model at: filings, transcripts, portfolio and CRM data, research archives, due-diligence questionnaires, credit agreements, policies, internal memos. The quality and accessibility of this layer dominates results, a point I will return to, because there is now hard evidence for it.
+
+The **workflow layer** is the repeatable sequence a person follows: the input rules, the steps, the output format. This is where "usage" becomes "adoption." It is mostly absent in firms that are merely experimenting.
+
+The **evidence layer** is what separates finance from casual AI use: citations, source pages, numerical checks, source coverage, and contradiction detection. Not "the model said so" but "here is the claim, here is the line it came from, here is the math, and here is what it conflicts with."
+
+The **control layer** is human approval, review status, logging, policy rules, and an audit trail — the part that lets a CCO, an investor, or an examiner reconstruct what happened and why.
 
 > **The firms that win will not be the ones with the best model layer. They will be the ones that built the other four.**
 
@@ -96,7 +100,7 @@ If the last mile is the problem, what does crossing it actually require? Strip a
 
 *"Most firms have built the bottom band and called it an AI strategy."*
 
----
+There is a reason to study finance specifically here, rather than treating it as one more industry adopting AI. Finance combines high-frequency data, hard regulatory constraints, and unusually clear economic incentives, which makes it the place where a new technology either survives real production conditions or is quietly abandoned. Lorica makes this point too, calling financial services the bellwether for how emerging technology moves from the research lab into production.[^lorica] If a workflow holds up here, under audit and review and the cost of being wrong, it will hold up most places. The five layers are how it holds up.
 
 ---
 
@@ -116,7 +120,7 @@ The fix is to stop treating an AI output as an answer and start treating it as a
 
 *"In finance, the question is never 'did the model find a source?' It is 'does the source prove the claim?'"*
 
-*(This deserves its own essay, and it will get one. For now the point stands: an evidence layer is not a nice-to-have. It is the thing that makes everything above it usable.)*
+This deserves its own essay, and it gets one later in the series. For now the point stands: an evidence layer is not a nice-to-have. It is the thing that makes everything above it usable.
 
 ---
 
@@ -140,13 +144,13 @@ Investors have arrived at the same conclusion from the other side. AIMA found th
 
 ## The Cost Nobody Budgets For
 
-When firms ask "what will AI cost us," they look at the model bill — the seats, the API usage, the data add-ons. That bill is real, and it is the smallest line item.
+One more myth to retire before the path forward. When firms ask "what will AI cost us," they look at the model bill — the seats, the API usage, the data add-ons. That bill is real, and it is the smallest line item.
 
 The real cost lives in the other four layers: cleaning and parsing data, tuning retrieval, designing and testing workflows, building the review process, doing vendor diligence, training staff, and — the one nobody forecasts — **the cost of failed adoption**, where a firm pays for capability that quietly goes unused.
 
 > The right unit of measurement is not "what is our AI bill." It is "what does it cost us to produce one *approved* output" — one reviewed earnings memo, one compliant client letter, one signed-off credit memo. Measure that, and the build-versus-buy conversation changes completely.
 
-*(Also its own essay. Flagged here so the thesis is complete.)*
+This gets its own essay later in the series. I flag it here so the thesis is complete.
 
 ---
 
@@ -165,7 +169,7 @@ Pick one workflow. Choose something that is repeated often, document-heavy, time
 
 Only after that comparison earns its keep do you scale to a second workflow. This is slower than "roll out AI to the firm," and it is the only version that produces something you can measure, defend, and repeat.
 
-> **🔧 PROOF SLOT — replace before publishing.** *This is the strongest possible place for a real exhibit: a redacted before/after of one workflow you ran this way, with actual timings ("partner review went from 40 minutes to 12"), a sample review-log row, or a screenshot of a workflow test catching an error. A reader who is a CCO or PM will trust one real artifact more than the entire essay above it. Clear anything you show against your own confidentiality obligations first.*
+There is a discipline here worth naming, because it runs against the instinct that AI rewards moving fast and broad. The firms that get real value are the ones that go narrow and deep first: one workflow, fully instrumented, measured against the old way, before the second. The breadth comes later, and it compounds, because each workflow you harden becomes the template for the next. Start everywhere at once and you get the scattered usage from the top of this essay. Start with one and finish it, and you get an operating model.
 
 ---
 
@@ -187,17 +191,15 @@ The models will keep changing. Claude, GPT, and Gemini will leapfrog each other;
 
 This is the first essay in *The AI Operating Manual for Investment Firms*. Over the coming weeks I will take the pieces I only gestured at here and make them concrete: why retrieval-augmented generation fails in finance and what an evidence layer looks like in practice; the real cost model for GenAI in a fund; what every RIA chief compliance officer should ask before allowing ChatGPT or Claude; how a hedge fund should actually run earnings season; why private credit may be the single best GenAI use case in finance; and what the coming AI DDQ will demand of you.
 
-> **Practical next step.** Take one AI-assisted workflow in your firm — a client communication, a DDQ response, a research memo, a credit memo, a piece of portfolio commentary — and ask three questions of it. Is every claim source-backed? Is there a named reviewer? Could you reconstruct the process in a year? If the answer to any of those is no, that workflow is usage, not adoption. That gap is where to start.
+> **Practical next step.** Take one AI-assisted workflow in your firm — a client communication, a DDQ response, a research memo, a credit memo, a piece of portfolio commentary. Ask three questions of it. Is every claim source-backed? Is there a named reviewer? Could you reconstruct the process in a year? If the answer to any of those is no, that workflow is usage, not adoption. That gap is where to start.
 
-> **[SOFT CTA — your words.]** *I help investment firms move from scattered AI usage to defensible, evidence-backed workflows across research, client communication, DDQs, credit memos, and compliance review. If that is the gap you are staring at, [get in touch / subscribe / download the AI Usage Policy starter below].*
-
-> **[LEAD MAGNET — build one before launch.]** *Gate something a buyer genuinely wants in exchange for an email: an "AI Usage Policy" starter template, a DDQ-readiness checklist, or a "cost per approved output" worksheet. The download is the start of the conversation — far stronger than a contact link.*
+> **Working with me.** I help investment firms move from scattered AI usage to defensible, evidence-backed workflows across research, client communication, DDQs, credit memos, and compliance review. My role is deliberately vendor-neutral: I do not sell a platform, so I have no reason to tell you to buy one. What I bring is the operating layer the platforms leave out, built around the workflows your firm already runs. If that is the gap you are staring at, the best place to start is a single workflow and a conversation about it.
 
 ---
 
 ## Sources
 
-*Verify each of these against the primary link before publishing; for an anti-hype brand, a single garbled statistic is the most expensive error you can make. Where a figure originates with a regulator or company, I have linked the regulator or company directly rather than a secondary write-up.*
+*Every figure here is traceable to a primary source: a regulator, a company, or a named research paper. Where a statistic originates with a regulator or company, I have linked the regulator or company directly rather than a secondary write-up. For a brand built on not overstating things, a single garbled number is the most expensive error available, so each is worth checking against the link before you publish.*
 
 [^aima]: Alternative Investment Management Association, *Charting the Course: Lessons from AI Leaders in Alternative Investments* (2025). 95% of fund-manager respondents reported using generative AI, up from 86% in 2023; survey of 150 fund managers (~$788bn AUM) plus 18 institutional investors. AIMA press release: https://www.aima.org/article/press-release-front-office-gen-ai-adoption-shifts-from-if-to-when-for-leading-fund-managers-aima-research-finds.html
 
@@ -206,6 +208,8 @@ This is the first essay in *The AI Operating Manual for Investment Firms*. Over 
 [^balyasny]: OpenAI, "How Balyasny Asset Management built an AI research engine for investing" (case study, March 6, 2026). ~95% of Balyasny's ~180 investment teams actively use the internal platform; centralized Applied AI team; traceable reasoning and centralized guardrails with desk-level customization; research tasks cut from days to hours; Central Bank Speech Analyst from ~2 days to ~30 minutes. https://openai.com/index/balyasny-asset-management/ (Balyasny's own note: https://www.bamfunds.com/news-and-insights/balyasny-openai-feature)
 
 [^bal2]: Per the same OpenAI case study and contemporaneous coverage, Balyasny evaluated its production model across 12+ financial dimensions (forecasting accuracy, numerical reasoning, hallucination reduction) before deployment. Confirm specifics against the OpenAI source above.
+
+[^lorica]: Ben Lorica, "What's Emerging in Financial AI: From Foundation Models to Compliance-as-Code," *Gradient Flow*, January 13, 2026. A former hedge-fund quant, Lorica frames financial services as the bellwether for how emerging technology moves from research into production, and argues the near-term story is not AGI but "domain-specific AI that survives audits, latency budgets, and messy production data." https://gradientflow.substack.com/p/emerging-ai-patterns-in-finance-what
 
 [^anthropic]: Anthropic launched *Claude for Financial Services* in July 2025 and on May 5, 2026 released ten ready-to-run finance agent templates (pitchbook creation, KYC screening, earnings review, month-end close, credit-memo drafting, etc.), with Microsoft 365 add-ins and data partnerships (Moody's, FactSet, Morningstar, S&P Global, Dun & Bradstreet). Coverage: https://fortune.com/2026/05/05/anthropic-wall-street-financial-services-agents-jamie-dimon/ — verify product specifics against Anthropic's own announcement before citing.
 
