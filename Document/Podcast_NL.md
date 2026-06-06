@@ -1,5 +1,51 @@
 # Podcast Structure: NeuronLens and Inside-Out AI
 
+NeuronLens, we <span style="color: red">discover</span> hidden signals inside models, <span style="color: red">control</span> them from within, and ultimately <span style="color: red">design</span> and <span style="color: red">repair</span> them—bringing inside-out interpretability to the enterprise.
+
+## <span style="color: red">Vision?</span>
+
+Our <span style="color: red">vision</span> is to deeply understand model internals, bridging the gap between AI's capability and human trust—so that we confidently apply it across evolving use case.
+
+## <span style="color: red">Why better than others?</span>
+
+In high-stakes, regulated industries, understanding models is critical. We offer internal insights backed by research and benchmarks—<span style="color: red">unlike others</span> who only watch outputs. The caveat: it's early-stage and best with open-source models. Still, peering inside is a big value add.
+
+## <span style="color: red">Why now?</span>
+
+The gap between AI's capability and internal understanding is growing. Few are addressing it at the enterprise level. We provide internal interpretability now—letting high-stakes industries trust and adopt AI responsibly. The time is ripe, and the need is clear.
+
+## <span style="color: red">A) Iceberg</span>
+
+Second, most of a model's reasoning is hidden beneath the surface. We unlock that to achieve explainability, auditability, and the discovery of new potential—allowing innovation that's impossible with black-box approaches.
+
+## <span style="color: red">B) Root cause</span>
+
+First, right now, many fixes are surface-level patches. We believe true robustness comes from understanding the model's internals—letting us fix issues at their root and ensure lasting reliability.
+
+## <span style="color: red">C) Discover for research and innovation? – Low priority</span>
+
+We unlock the untapped potential hidden inside your model—not only making it explainable and auditable, but also uncovering new concepts—whether for research, strategy, or innovation. It's not just understanding the model—it's discovering what it's truly capable of.
+
+## <span style="color: red">D) Design</span>
+
+Third, your model might be capable, but not tailored to your exact needs. We empower you to redesign and customize it—so it doesn't just work, it aligns precisely with your goals. Altogether, we're here to make your AI truly understood, deeply reliable, and fully yours.
+
+We aren't replacing your tools; we're giving you deeper control. We help you look inside the engine—so you can fix it from within, not just patch it. Finally, we help you customize that "engine" to your exact needs—whether you need a Ferrari or something simpler, it's built for you. That's the final pitch that ties it all together!
+
+## <span style="color: red">How do you measure success?</span>
+
+We'll measure success in two ways—quantitatively, you'll see fewer errors, better accuracy, or reduced effort. Qualitatively, you'll have explainability at your fingertips, ready for regulators or innovation—keeping you ahead.
+
+## <span style="color: red">Why companies should adopt?</span>
+
+We future-proof you. You'll have explainability, control, and the ability to evolve your models as AI changes. With internal insight, you'll always be ahead of the curve. Simple, yet powerful!
+
+## <span style="color: red">Tools – SAE (pattern), Probes and then Ablation</span>
+
+We open up the AI's mind, find its patterns, understand which way it's leaning, and test what happens when we switch parts off—so we fully trust how it works.
+
+---
+
 ## Working podcast title
 
 **Inside the AI Engine: Why Enterprises Need Model-Internal Intelligence**
@@ -21,7 +67,7 @@ NeuronLens exists because the gap between AI capability and human understanding 
 
 NeuronLens adds the missing layer: **model-internal intelligence**.
 
-We look inside the model to discover hidden signals, detect internal risk states, understand concepts, control behavior, and eventually design or repair models in a targeted way.
+At NeuronLens, we <span style="color: red">discover</span> hidden signals inside models, <span style="color: red">control</span> them from within, and ultimately <span style="color: red">design</span> and <span style="color: red">repair</span> them—bringing inside-out interpretability to the enterprise.
 
 ## Hook 1: The Ferrari engine
 
@@ -36,11 +82,11 @@ NeuronLens is about opening the hood.
 
 Not just asking:
 
-<span style="color: red">What did the model output?</span>
+<span style="color: red">What failed?</span>
 
 But asking:
 
-<span style="color: red">What was forming inside the model before it acted?</span>
+<span style="color: red">Why it failed?</span>
 
 ---
 
